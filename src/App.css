@@ -1,6 +1,33 @@
 .App {
   text-align: center;
+  /* background-image: url("../src/assets/images/active-athlete-barbell-703014.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  
+  height: 100vh;
+  width: 100vw; */
 }
+
+.userDisplay {
+  text-align: center;
+  background-image: url("../src/assets/images/1024x768_px_Arnold_Schwarzenegger_men-531752.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  
+  height: 100vh;
+  width: 100vw;
+}
+
+@media screen and (max-width: 1030px) {
+  .App {
+    background-attachment: scroll;
+  }
+}
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -31,3 +58,282 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+/*Auth Styling*/
+
+.kettle {
+  height: 30px;
+  width: 30px;
+}
+.randomWorkout {
+  color: rgb(177, 77, 77);
+}
+
+.buttonHidden {
+  display: none !important;
+}
+
+.buttonDisplay {
+  border-radius: 3px;
+  background-color: grey;
+  /* height: 2em !important; */
+}
+
+span{
+  margin-left: 20px;
+}
+
+.login {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%); 
+  height: 300px;
+  width: 400px;
+  background-color: rgba(172, 168, 168, 0.5);
+  border-radius: 10px;
+}
+.login input {
+  border: double 1px rgb(177, 174, 174);
+  border-radius: 5px;
+  height: 30px;
+  width: 200px;
+  font-size: .8em;
+}
+.login form {
+  width:100%;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%); 
+}
+
+.signup {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%); 
+  height: 500px;
+  width: 400px;
+  background-color: rgba(172, 168, 168, 0.5);
+  border-radius: 10px;
+}
+.signup input {
+  border: inset 1px rgb(186, 184, 184);
+  border-radius: 5px;
+  height: 30px;
+  width: 200px;
+  font-size: .8em;
+}
+.signup form {
+  width:100%;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%); 
+}
+.signup .one {
+  float: left;
+  margin-left: 50px;
+  border-radius: 5px;
+  margin-top: 40px;
+  height: 40px;
+  width: 140px;
+  box-shadow: 1px 1px grey;
+}
+
+.signup .two {
+  float: right;
+  margin-right: 50px;
+  border-radius: 5px;
+  margin-top: 40px;
+  height: 40px;
+  width: 140px;
+  box-shadow: 1px 1px grey;
+}
+
+.login .one {
+  float: left;
+  margin-left: 50px;
+  border-radius: 5px;
+  margin-top: 40px;
+  height: 40px;
+  width: 140px;
+  box-shadow: 1px 1px grey;
+}
+.login .two {
+  /* display:inline-block; */
+  float: right;
+  margin-right: 50px;
+  border-radius: 5px;
+  margin-top: 40px;
+  height: 40px;
+
+  width: 140px;
+  box-shadow: 1px 1px grey;
+  /* background-color: rgb(203, 203, 203); */
+
+  /* display: inline; */
+}
+
+
+.login label {
+  font-weight: bold;
+}
+
+.signup label {
+  font-weight: bold;
+}
+
+div Button {
+  border-radius: 5px;
+  /* margin-top: 40px; */
+}
+
+/*STYLING FOR MODAL*/
+#img {
+  width: 100px;
+  height: 100px;
+}
+
+#number {
+  width: 100px !important;
+  text-align: center !important;
+}
+
+
+#clearDiv img {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: .3em;
+}
+#clearDiv p {
+  font-size: 0.8em;
+}
+.buttons {
+  margin: 1.2em;
+  width: 95%;
+}
+.buttons Button {
+  margin: .5em;
+  width: 45%;
+
+}
+.generatedWorkouts {
+  margin: 1em;
+  padding: 1em;
+}
+
+
+
+.generateButton {
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255) !important;
+  color: black !important;
+  /* width: 20%; */
+  /* float: left; */
+  margin-top: 20px;
+  position: fixed;
+  height: 5em;
+}
+
+.navbar {
+  box-shadow: 2px black;
+  /* height: 40px; */
+  width: 100%;
+  background-color: rgb(138, 68, 68) !important;
+  position: fixed !important;
+  z-index: 5;
+}
+
+/* .lol {
+  width: 60%;
+  float: right;
+} */
+.carousel{
+  padding: 5px !important;
+  border-radius: 5px !important;
+}
+
+.cardContainer {
+  width: 80% !important;
+  margin: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.cardContainer .cardButtons {
+  margin: 20px;
+}
+.cardButtons Button {
+  position: relative;
+  top: 2em;
+  margin: .5em;
+}
+.time {
+  margin: 20px;
+}
+.comment {
+  margin: 20px;
+  text-align: left;
+}
+
+.carousel {
+  margin: auto !important;
+  width: 100% !important;
+}
+.carousel img {
+  width: 150px;
+  height: 200px;
+}
+
+#modalDiv img {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: .3em;
+}
+
+.modalButton {
+  width: 100%;
+  margin: 1.2em;
+}
+.modalButton Button {
+  width: 90%;
+  
+}
+
+.yourWorkouts {
+  margin: 1.2em;
+}
+
+.yourWorkouts img {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: .3em;
+}
+.yourWorkouts p {
+  font-size: 0.8em;
+}
+.modalForm {
+  position: relative;
+  top: 80px;
+  margin: auto;
+  width: 100%;
+}
+
+
