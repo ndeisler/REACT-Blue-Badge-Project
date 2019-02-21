@@ -2,6 +2,7 @@ import React from "react";
 import {Container, Row, Col } from "reactstrap";
 import Login from "../auth/Login";
 import Signup from "./Signup";
+import APIURL from "../helpers/environment";
 
 class Auth extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class Auth extends React.Component {
     }
     handleSubmit =(event) => {
         event.preventDefault();
-        let url = this.state.login ? "http://localhost:3000/user/login" : "http://localhost:3000/user/signup";
+        let url = this.state.login ? `${APIURL}/user/login` : `${APIURL}/user/signup`;
         fetch(url, {
             method: "POST",
             body: JSON.stringify(this.state),

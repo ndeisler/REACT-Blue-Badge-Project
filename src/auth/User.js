@@ -9,6 +9,8 @@ import Randomizer from "./Randomizer";
 import UserWorkouts from "./UserWorkouts";
 import UpdateModal from "./UpdateModal";
 
+import APIURL from "../helpers/environment";
+
 
 class User extends Component {
     constructor(props) {
@@ -27,7 +29,7 @@ class User extends Component {
         }
     }
     componentDidMount() {
-        fetch("http://localhost:3000/admin/", {
+        fetch(`${APIURL}/admin/`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -41,7 +43,7 @@ class User extends Component {
         this.fetchUserWorkouts();
     }
     fetchUserWorkouts = () => {
-        fetch("http://localhost:3000/log/getall", {
+        fetch(`${APIURL}/log/getall`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -62,7 +64,7 @@ class User extends Component {
     }
     incomingModal =(event) => {
         event.preventDefault();
-        fetch(`http://localhost:3000/log/get/${event.target.id}`, {
+        fetch(`${APIURL}/log/get/${event.target.id}`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json",
@@ -114,7 +116,7 @@ class User extends Component {
     }
     deleteWorkout = (event) => {
         console.log(event.target.id);
-        fetch(`http://localhost:3000/log/delete/${event.target.id}`, {
+        fetch(`${APIURL}/log/delete/${event.target.id}`, {
             method: "DELETE",
             body: JSON.stringify({log: {id: event.target.id}}),
             headers: new Headers({
@@ -129,7 +131,7 @@ class User extends Component {
             return el.id;
         });
         // console.log(workouts);
-        fetch("http://localhost:3000/log/save", {
+        fetch(`${APIURL}/log/save`, {
             method: "POST",
             body: JSON.stringify({
                 workouts: workouts,
@@ -151,7 +153,7 @@ class User extends Component {
     updateWorkout = (event, workout) => {
         event.preventDefault();
         // console.log(workout.id)
-        fetch(`http://localhost:3000/log/update/${workout.id}`, {
+        fetch(`${APIURL}/log/update/${workout.id}`, {
             method: "PUT",
             body: JSON.stringify({
                 time: parseInt(this.state.time),
