@@ -28,13 +28,18 @@ class Auth extends React.Component {
         let url = this.state.login ? `${APIURL}/user/login` : `${APIURL}/user/signup`;
         fetch(url, {
             method: "POST",
-            body: JSON.stringify(this.state),
+            body: JSON.stringify({
+                firstName: "",
+                lastName: "",
+                email: "",
+                password: ""
+            }),
             headers: {
                 "Content-Type": "application/json"
             }
         })
         .then(res => res.json())
-        .then(json => this.props.tokenHandler(json.sessionToken));
+        .then(json => this.props.tokenHandler(json.sessionToken))
         
     }
     loginToggle = (event) => {
