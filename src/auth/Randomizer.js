@@ -12,10 +12,10 @@ const Randomizer = (props) => {
             return (
                 <div className="generatedWorkouts" key={index}>
                 <Row>
-                    <Col md="4">
+                    <Col sm="12" md="4">
                         <img src={exercise.image_url}/>
                     </Col>
-                    <Col md="8">
+                    <Col sm="12" md="8">
                         <h4>{exercise.name}</h4>
                         <p>{exercise.description}</p>
                     </Col>

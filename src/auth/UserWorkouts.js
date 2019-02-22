@@ -34,7 +34,7 @@ const UserWorkouts = (props) => {
                             <Col sm="12" md="4">
                                 <div className="time">
                                     <h6><b>Time:</b></h6><br/>
-                                    <p>{workout.time} Min</p>
+                                    <p>{workout.time}{workout.time === null ? null : " Min"}</p>
                                 </div>
                                 <div className="cardButtons">
                                     <Button id={workout.id} onClick={props.incomingModal}>Edit</Button>

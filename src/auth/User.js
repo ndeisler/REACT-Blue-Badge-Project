@@ -178,10 +178,12 @@ class User extends Component {
             <div className="modalForm">
             <Container fluid className="formContainer">
                 <Row>
-                    <Col md="12" lg="4">
+                    <Col sm="12" md={{ size: 6, offset: 3 }} lg={{size: 6, offset: 3}}>
                         <Button className="generateButton" onClick={this.setUpdatedWorkout}>Generate a New Workout</Button>
                     </Col>
-                    <Col md="12" lg="8">
+                </Row>
+                <Row>
+                    <Col sm="12" md={{ size: 8, offset: 2 }} lg={{size: 8, offset: 2}}>
                         <UserWorkouts delete={this.deleteWorkout} userWorkouts={this.state.userWorkouts} incomingModal={this.incomingModal} exercises={this.state.exercises}/>
                     </Col>
                 </Row>
@@ -215,10 +217,12 @@ class User extends Component {
                         <br/>
                         {this.state.generatedWorkout.length > 0 ? <Randomizer generatedWorkouts={this.state.generatedWorkout}/>: null}
                         <br />  
+                        <Row>
                         <div className="buttons">
                             <Button onClick={this.generateWorkout}>Generate</Button>
                             <Button type="submit" color="warning">Save Workout</Button>
                         </div>
+                        </Row>
                     </Form>
             </Container>
             {/* <Button onClick={this.setUpdatedWorkout} color="danger">Close</Button> */}

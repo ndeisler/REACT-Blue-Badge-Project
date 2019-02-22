@@ -93,14 +93,14 @@ span{
   transform: translate(-50%, -50%); 
   height: 300px;
   width: 400px;
-  background-color: rgba(172, 168, 168, 0.5);
+  background-color: rgba(136, 135, 135, 0.9);
   border-radius: 10px;
 }
 .login input {
   border: double 1px rgb(177, 174, 174);
-  border-radius: 5px;
+  border-radius: 4px;
   height: 30px;
-  width: 200px;
+  width: 250px;
   font-size: .8em;
 }
 .login form {
@@ -118,14 +118,14 @@ span{
   transform: translate(-50%, -50%); 
   height: 500px;
   width: 400px;
-  background-color: rgba(172, 168, 168, 0.5);
+  background-color: rgba(136, 135, 135, 0.9);
   border-radius: 10px;
 }
 .signup input {
   border: inset 1px rgb(186, 184, 184);
   border-radius: 5px;
   height: 30px;
-  width: 200px;
+  width: 250px;
   font-size: .8em;
 }
 .signup form {
@@ -140,7 +140,7 @@ span{
   margin-left: 50px;
   border-radius: 5px;
   margin-top: 40px;
-  height: 40px;
+  height: 30px;
   width: 140px;
   box-shadow: 1px 1px grey;
 }
@@ -150,7 +150,7 @@ span{
   margin-right: 50px;
   border-radius: 5px;
   margin-top: 40px;
-  height: 40px;
+  height: 30px;
   width: 140px;
   box-shadow: 1px 1px grey;
 }
@@ -160,7 +160,7 @@ span{
   margin-left: 50px;
   border-radius: 5px;
   margin-top: 40px;
-  height: 40px;
+  height: 30px;
   width: 140px;
   box-shadow: 1px 1px grey;
 }
@@ -170,7 +170,7 @@ span{
   margin-right: 50px;
   border-radius: 5px;
   margin-top: 40px;
-  height: 40px;
+  height: 30px;
 
   width: 140px;
   box-shadow: 1px 1px grey;
@@ -214,6 +214,14 @@ div Button {
   height: 100px;
   border-radius: .3em;
 }
+
+/* @media screen and (max-width: 500px) {
+  .generatedWorkouts {
+    height: 50px;
+  }
+} */
+
+
 #clearDiv p {
   font-size: 0.8em;
 }
@@ -233,22 +241,22 @@ div Button {
 
 
 
-.generateButton {
+/* .generateButton {
   margin-top: 20px;
   background-color: rgb(255, 255, 255) !important;
   color: black !important;
   /* width: 20%; */
   /* float: left; */
-  margin-top: 20px;
-  position: fixed;
-  height: 5em;
-}
+  /* margin-top: 20px; */
+  /* position: fixed; */
+  /* height: 5em; */
+/* } */
 
 .navbar {
   box-shadow: 2px black;
   /* height: 40px; */
   width: 100%;
-  background-color: rgb(138, 68, 68) !important;
+  background-color: rgb(63, 59, 59) !important;
   position: fixed !important;
   z-index: 5;
 }
@@ -265,12 +273,16 @@ div Button {
 .cardContainer {
   width: 80% !important;
   margin: 20px;
-  background-color: white;
+  background-image: linear-gradient(127deg, rgba(171, 164, 164, 0.9), rgba(255, 247, 247, 0.9));
   border-radius: 5px;
 }
 
 .cardContainer .cardButtons {
+  text-align: left;
   margin: 20px;
+}
+.cardContainer img {
+  border-radius: 5px;
 }
 .cardButtons Button {
   position: relative;
@@ -278,6 +290,7 @@ div Button {
   margin: .5em;
 }
 .time {
+  text-align: left;
   margin: 20px;
 }
 .comment {

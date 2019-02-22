@@ -31,12 +31,13 @@ class SiteBar extends Component {
         return (
             <div>
             <Navbar className="navbar" light expand="md">
-                <NavbarBrand href="/" className="randomWorkout"><img className="kettle"src={kettleBell} alt="kettlebell"/>RANDOM WORKOUT</NavbarBrand>
+                <NavbarBrand href="/" className="randomWorkout"><img className="kettle"src={kettleBell} alt="kettlebell"/></NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
                             
+                            {/* <Button onClick={this.setUpdatedWorkout}>Generate a New Workout</Button> */}
                             <Button className={this.props.token !== undefined ? "buttonDisplay" : "buttonHidden"} onClick={() => this.props.removeToken()}>Logout</Button>
                             
                         </NavItem>
