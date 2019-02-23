@@ -261,10 +261,10 @@ div Button {
   z-index: 5;
 }
 
-/* .lol {
-  width: 60%;
+.lol {
+  width: 100%;
   float: right;
-} */
+}
 .carousel{
   padding: 5px !important;
   border-radius: 5px !important;
@@ -272,7 +272,8 @@ div Button {
 
 .cardContainer {
   width: 80% !important;
-  margin: 20px;
+  margin: auto;
+  margin-top: 20px;
   background-image: linear-gradient(127deg, rgba(171, 164, 164, 0.9), rgba(255, 247, 247, 0.9));
   border-radius: 5px;
 }
