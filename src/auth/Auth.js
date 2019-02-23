@@ -18,9 +18,11 @@ class Auth extends React.Component {
 // DO A COMPONENT WILL MOUNT THAT DISPLAY ALL THE RANDOM WORKOUTS SAVED
 
     handleChange = (event) => {
+        
         this.setState({
             [event.target.id] : event.target.value
         });
+        
         
     }
     handleSubmit =(event) => {
@@ -29,10 +31,10 @@ class Auth extends React.Component {
         fetch(url, {
             method: "POST",
             body: JSON.stringify({
-                firstName: "",
-                lastName: "",
-                email: "",
-                password: ""
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                email: this.state.email,
+                password: this.state.password
             }),
             headers: {
                 "Content-Type": "application/json"
