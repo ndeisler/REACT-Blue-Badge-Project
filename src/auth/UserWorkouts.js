@@ -15,7 +15,7 @@ const UserWorkouts = (props) => {
             {props.userWorkouts.map((workout, index) => {
                 
                 return (
-                    <Container className="cardContainer" key={index}>
+                    <Container fluid className="cardContainer" key={index}>
                         <Row>
                             <Col sm="12" md="4">
                                 <Carousel showThumbs={false} infiniteLoop={true} className="carousel">

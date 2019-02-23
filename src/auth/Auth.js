@@ -62,6 +62,8 @@ class Auth extends React.Component {
         let title = this.state.login ? "Login" : "Sign-up";
         let signUpFields = this.state.login ? null : (
             <React.Fragment>
+
+
                 <label htmlFor="firstName">First Name:</label><br/>
                 <input  onChange={this.handleChange} value={this.state.firstName}type="text" id="firstName" placeholder="first name"/><br/>
                 <label htmlFor="lastName">Last Name:</label><br/>
