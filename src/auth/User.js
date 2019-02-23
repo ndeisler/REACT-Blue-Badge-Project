@@ -53,14 +53,10 @@ class User extends Component {
             return res.json()
         }).then(workouts => this.setState({userWorkouts: workouts}))
     }
-
-    
-
     setUpdatedWorkout = (event) => {
         event.preventDefault();
         this.setState({generatedWorkout: []})
-        {this.state.updatedPressed ? this.setState({updatedPressed: false}) : this.setState({updatedPressed: true})}
-        
+        {this.state.updatedPressed ? this.setState({updatedPressed: false}) : this.setState({updatedPressed: true})}   
     }
     incomingModal =(event) => {
         event.preventDefault();
@@ -82,7 +78,6 @@ class User extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
-
     }
     generateWorkout = (event) => {
         this.setState({
