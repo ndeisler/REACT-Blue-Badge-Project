@@ -92,24 +92,3 @@ class Auth extends React.Component {
 }
 
 export default Auth;
-
-
-// const Auth = (props) => {
-//     return (
-//         <Container>
-//             <Row>
-//                 <Col md="1"></Col>
-//                 <Col md="4">
-//                     <Signup setToken={props.setToken}/>
-//                 </Col>
-//                 <Col md="2"></Col>
-//                 <Col md="4">
-//                     <Login setToken={props.setToken}/>
-//                 </Col>
-//                 <Col md="1"></Col>
-//             </Row>
-//         </Container>
-//     )
-// }
-
-// export default Auth;

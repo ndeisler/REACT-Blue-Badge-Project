@@ -39,7 +39,7 @@ class User extends Component {
             // console.log(res.json());
             return res.json()
         })
-        .then(workout => this.setState({exercises: workout}, () => console.log(this.state.exercises)));
+        .then(workout => this.setState({exercises: workout}));
 
         this.fetchUserWorkouts();
     }
@@ -61,7 +61,6 @@ class User extends Component {
     }
     incomingModal = (event) => {
         event.preventDefault();
-        console.log(event.target.id)
         fetch(`${APIURL}/log/get/${event.target.id}`, {
             method: "GET",
             headers: {
@@ -98,7 +97,7 @@ class User extends Component {
                     }
                     randomWorkoutGenerator(arr);
                 }
-                console.log(arr);
+                // console.log(arr);
                 
             }
             randomWorkoutGenerator(array);
@@ -113,7 +112,6 @@ class User extends Component {
         })
     }
     deleteWorkout = (event) => {
-        console.log(event.target.id);
         fetch(`${APIURL}/log/delete/${event.target.id}`, {
             method: "DELETE",
             body: JSON.stringify({log: {id: event.target.id}}),
@@ -150,7 +148,6 @@ class User extends Component {
     }
     updateWorkout = (event, workout) => {
         event.preventDefault();
-        console.log(workout.id)
         fetch(`${APIURL}/log/update/${workout.id}`, {
             method: "PUT",
             body: JSON.stringify({
