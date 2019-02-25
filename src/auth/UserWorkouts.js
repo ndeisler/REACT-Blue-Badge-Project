@@ -4,6 +4,8 @@ import {Card, CardImg, CardHeader, CardText, CardBody, CardTitle, CardSubtitle, 
 import { Carousel } from "react-responsive-carousel";
 import { FaTrashAlt } from "react-icons/fa"
 import { FaEdit } from "react-icons/fa"
+import trash from "../assets/images/trash2.png";
+import edit from "../assets/images/edit2.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
@@ -58,10 +60,10 @@ const UserWorkouts = (props) => {
                                 </div> 
                             </Col>
                             <Col >
-                                <Button className="editButton" id={workout.id} onClick={props.incomingModal}><FaEdit  /></Button>
+                                <Button className="editButton" id={workout.id} onClick={props.incomingModal}><img src={edit} id={workout.id} onClick={props.incomingModal}/></Button>
                             </Col>
                             <Col >  
-                                <Button className="deleteButton" id={workout.id} onClick={props.delete}><FaTrashAlt /></Button> 
+                                <Button className="deleteButton" id={workout.id} onClick={props.delete}><img src={trash} id={workout.id} onClick={props.delete}/></Button> 
                                                              
                                 </Col>
                         </Row>

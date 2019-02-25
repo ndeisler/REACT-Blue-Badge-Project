@@ -10,7 +10,7 @@
   width: 100vw; */
 }
 
-.userDisplay {
+/* .userDisplay {
   text-align: center;
   background-image: url("../src/assets/images/1024x768_px_Arnold_Schwarzenegger_men-531752.jpg");
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@
   
   height: 100vh;
   width: 100vw;
-}
+} */
 
 @media screen and (max-width: 1030px) {
   .App {
