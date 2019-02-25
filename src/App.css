@@ -239,6 +239,17 @@ div Button {
   padding: 1em;
 }
 
+.modalGenerateButton {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 1.2em;
+}
+.modalGenerateButton Button {
+  width: 100%;
+   
+
+}
+
 
 
 /* .generateButton {
@@ -265,6 +276,21 @@ div Button {
   width: 100%;
   float: right;
 }
+.deleteButton {
+  /* margin-top: 1em; */
+  height: 2.5em;
+  color: grey !important;
+  background-color: transparent !important;
+  border-style: none !important;
+}
+.editButton {
+  /* margin-top: 1em; */
+  height: 2.5em;
+  color: grey !important;
+  background-color: transparent !important;
+  border-style: none !important;
+}
+
 .carousel{
   padding: 5px !important;
   border-radius: 5px !important;
@@ -285,10 +311,16 @@ div Button {
 .cardContainer img {
   border-radius: 5px;
 }
-.cardButtons Button {
+/* .cardButtons Button {
   position: relative;
   top: 2em;
   margin: .5em;
+} */
+.cardContainer .editButton {
+  float: left;
+}
+.cardContainer .deleteButton {
+  float: right;
 }
 .time {
   text-align: left;

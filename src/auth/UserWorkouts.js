@@ -1,13 +1,17 @@
 import React from "react";
 
-import {Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button, Container, Col, Row} from "reactstrap";
+import {Card, CardImg, CardHeader, CardText, CardBody, CardTitle, CardSubtitle, Button, Container, Col, Row} from "reactstrap";
 import { Carousel } from "react-responsive-carousel";
+import { FaTrashAlt } from "react-icons/fa"
+import { FaEdit } from "react-icons/fa"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 const UserWorkouts = (props) => {
     let exercises = props.exercises;
     let workout = props.userWorkouts; 
+
+
     
     return (
 
@@ -16,8 +20,13 @@ const UserWorkouts = (props) => {
                 
                 return (
                     <Container fluid className="cardContainer" key={index}>
+                        {/* <Row>
+                            <div className="trash">
+                                <FaTrashAlt className="deleteButton" id={workout.id} onClick={props.delete}/>
+                            </div>
+                        </Row> */}
                         <Row>
-                            <Col sm="12" md="4">
+                            <Col sm="12" md="4" lg="4">
                                 <Carousel showThumbs={false} infiniteLoop={true} className="carousel">
                                     {
                                         
@@ -31,25 +40,30 @@ const UserWorkouts = (props) => {
                                     }
                                 </Carousel>
                             </Col>
-                            <Col sm="12" md="4">
+                            <Col sm="12" md="2" lg="2">
                                 <div className="time">
                                     <h6><b>Time:</b></h6><br/>
                                     <p>{workout.time}{workout.time === null ? null : " Min"}</p>
                                 </div>
-                                <div className="cardButtons">
+                                {/* <div className="cardButtons">
                                     <Button id={workout.id} onClick={props.incomingModal}>Edit</Button>
                                     <Button id={workout.id} onClick={props.delete} color="danger">Delete</Button>
                                     
-                                </div>
+                                </div> */}
                             </Col>
-                            <Col sm="12" md="4">
+                            <Col sm="12" md="4" lg="4">
                                 <div className="comment">
                                     <h6><b>Comments:</b></h6><br/>
-                                    <p>{workout.comments}</p> 
-                                   
-                                    
+                                    <p>{workout.comments}</p>   
                                 </div> 
                             </Col>
+                            <Col >
+                                <Button className="editButton" id={workout.id} onClick={props.incomingModal}><FaEdit  /></Button>
+                            </Col>
+                            <Col >  
+                                <Button className="deleteButton" id={workout.id} onClick={props.delete}><FaTrashAlt /></Button> 
+                                                             
+                                </Col>
                         </Row>
                     </Container>
                     )
@@ -89,6 +103,6 @@ const UserWorkouts = (props) => {
         //     )
         // })}
         // </div>
-    )
+     )
 }
 export default UserWorkouts;

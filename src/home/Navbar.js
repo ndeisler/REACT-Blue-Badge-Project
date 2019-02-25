@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import kettleBell from "../assets/images/kettlebell.png";
+import kettleBell from "../assets/images/kettlebell2.png";
 
 
 import {

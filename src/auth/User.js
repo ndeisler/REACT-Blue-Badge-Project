@@ -23,6 +23,7 @@ class User extends Component {
             updatedPressed: true,
             clickUpdate: false,
             hasGenerated: false,
+            
             numberOfExercises: "",
             time: "",
             comments: ""
@@ -58,8 +59,9 @@ class User extends Component {
         this.setState({generatedWorkout: []})
         {this.state.updatedPressed ? this.setState({updatedPressed: false}) : this.setState({updatedPressed: true})}   
     }
-    incomingModal =(event) => {
+    incomingModal = (event) => {
         event.preventDefault();
+        console.log(event.target.id)
         fetch(`${APIURL}/log/get/${event.target.id}`, {
             method: "GET",
             headers: {
@@ -79,6 +81,7 @@ class User extends Component {
             [event.target.name]: event.target.value
         })
     }
+    
     generateWorkout = (event) => {
         this.setState({
             generatedWorkout: []
@@ -147,7 +150,7 @@ class User extends Component {
     }
     updateWorkout = (event, workout) => {
         event.preventDefault();
-        // console.log(workout.id)
+        console.log(workout.id)
         fetch(`${APIURL}/log/update/${workout.id}`, {
             method: "PUT",
             body: JSON.stringify({
@@ -213,10 +216,15 @@ class User extends Component {
                         {this.state.generatedWorkout.length > 0 ? <Randomizer generatedWorkouts={this.state.generatedWorkout}/>: null}
                         <br />  
                         <Row>
-                        <div className="buttons">
+                        {this.state.generatedWorkout.length > 0 ? <div className="buttons">
                             <Button onClick={this.generateWorkout}>Generate</Button>
                             <Button type="submit" color="warning">Save Workout</Button>
-                        </div>
+                        </div> : <div className="modalGenerateButton"><Button onClick={this.generateWorkout}>Generate</Button></div>}
+
+                        {/* <div className="buttons">
+                            <Button onClick={this.generateWorkout}>Generate</Button>
+                            <Button type="submit" color="warning">Save Workout</Button>
+                        </div> */}
                         </Row>
                     </Form>
             </Container>
