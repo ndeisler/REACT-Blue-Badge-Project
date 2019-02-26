@@ -192,7 +192,7 @@ class User extends Component {
                         <Form onSubmit={this.handleSubmit} >
                         <Row>
                             <Col md="8">
-                                <Label for="number">Choose how many exercises you would like to do today!</Label>
+                                <Label for="number" className="modalFormText">How many exercises would you like to do?</Label>
                             </Col>
                             <Col md="3">
                                 <Input type="select" name="numberOfExercises" id="number" onChange={this.handleChange} placeholder="number">

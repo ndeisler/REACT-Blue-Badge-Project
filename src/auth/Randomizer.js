@@ -15,7 +15,7 @@ const Randomizer = (props) => {
                     <Col sm="12" md="4">
                         <img src={exercise.image_url}/>
                     </Col>
-                    <Col sm="12" md="8">
+                    <Col  className="descriptionBox" sm="12" md="8">
                         <h4>{exercise.name}</h4>
                         <p>{exercise.description}</p>
                     </Col>
