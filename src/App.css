@@ -1,23 +1,12 @@
 .App {
   text-align: center;
-  /* background-image: url("../src/assets/images/active-athlete-barbell-703014.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  
-  height: 100vh;
-  width: 100vw; */
 }
-
-
 
 @media screen and (max-width: 1030px) {
   .App {
     background-attachment: scroll;
   }
 }
-
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

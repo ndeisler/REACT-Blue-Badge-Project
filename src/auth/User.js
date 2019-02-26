@@ -82,6 +82,10 @@ class User extends Component {
     }
     
     generateWorkout = (event) => {
+        let input = document.getElementById("number").value;
+        if (input === "") {
+            alert("Please choose a number of exercises");
+        } else {
         this.setState({
             generatedWorkout: []
         }, () => {
@@ -107,9 +111,11 @@ class User extends Component {
                 workout.push(exercises[index]);
             }
             this.setState({
-                generatedWorkout: workout
+                generatedWorkout: workout,
+                
             }) 
         })
+    }
     }
     deleteWorkout = (event) => {
         fetch(`${APIURL}/log/delete/${event.target.id}`, {
@@ -215,7 +221,7 @@ class User extends Component {
                         <br />  
                         <Row>
                         {this.state.generatedWorkout.length > 0 ? <div className="buttons">
-                            <Button onClick={this.generateWorkout}>Generate</Button>
+                            <Button onClick={this.generateWorkout}>Generate Again</Button>
                             <Button type="submit" color="warning">Save Workout</Button>
                         </div> : <div className="modalGenerateButton"><Button onClick={this.generateWorkout}>Generate</Button></div>}
 

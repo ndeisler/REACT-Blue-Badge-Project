@@ -12,7 +12,8 @@ class Auth extends React.Component {
             firstName: "",
             lastName: "",
             email: "",
-            password: ""
+            password: "",
+            needPassword: false
         }
     }
 // DO A COMPONENT WILL MOUNT THAT DISPLAY ALL THE RANDOM WORKOUTS SAVED
@@ -21,9 +22,7 @@ class Auth extends React.Component {
         
         this.setState({
             [event.target.id] : event.target.value
-        });
-        
-        
+        });  
     }
     handleSubmit =(event) => {
         event.preventDefault();
@@ -40,8 +39,16 @@ class Auth extends React.Component {
                 "Content-Type": "application/json"
             }
         })
-        .then(res => res.json())
-        .then(json => this.props.tokenHandler(json.sessionToken))
+        .then(res => {
+            if(res.status === 502) {
+                alert("I'm sorry that is the Incorrect Password");
+            } else if (res.status === 500) {
+                alert("You need to sign up");
+            } else {
+                return res.json()
+                .then(json => this.props.tokenHandler(json.sessionToken))
+            }})
+        
         
     }
     loginToggle = (event) => {
@@ -51,13 +58,13 @@ class Auth extends React.Component {
             login: !_login,
             firstName: "",
             lastName: "",
-            email: "",
+            // email: "",
             password: ""
         })
     }
     render() {
-        let buttonTitle = this.state.login ? "Register" : "Go back";
-        let buttonTitle2 = this.state.login ? "Login" : "Signup/Login";
+        let buttonTitle = this.state.login ? "Signup" : "Already a User?";
+        let buttonTitle2 = this.state.login ? "Login" : "Signup & Login";
         
         let title = this.state.login ? "Login" : "Sign-up";
         let signUpFields = this.state.login ? null : (
@@ -77,12 +84,13 @@ class Auth extends React.Component {
                 <h1>{title}</h1>
                 {signUpFields}
                 <label htmlFor="email">Email:</label><br/>
-                <input placeholder="email" onChange={this.handleChange} value={this.state.email} type="email" id="email" /><br/>
+                <input placeholder="email" onChange={this.handleChange} value={this.state.email} type="email" id="email" defaultValue={this.state.email}/><br/>
                 <label htmlFor="password">Password:</label><br/>
                 <input placeholder="password" onChange={this.handleChange} minLength="5" required value={this.state.password}type="password" id="password" /><br/>
+                
                 <div className="button">
-                <button className="one" onClick={this.loginToggle}>{buttonTitle}</button>
-                <button className="two" type="submit">{buttonTitle2}</button>
+                    <button className="one" onClick={this.loginToggle}>{buttonTitle}</button>
+                    <button className="two" type="submit">{buttonTitle2}</button>
                 </div>
             </form>
             </div>
