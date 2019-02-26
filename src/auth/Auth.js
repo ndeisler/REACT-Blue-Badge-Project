@@ -79,7 +79,7 @@ class Auth extends React.Component {
                 <label htmlFor="email">Email:</label><br/>
                 <input placeholder="email" onChange={this.handleChange} value={this.state.email} type="email" id="email" /><br/>
                 <label htmlFor="password">Password:</label><br/>
-                <input placeholder="password" onChange={this.handleChange} minlength="5" required value={this.state.password}type="password" id="password" /><br/>
+                <input placeholder="password" onChange={this.handleChange} minLength="5" required value={this.state.password}type="password" id="password" /><br/>
                 <div className="button">
                 <button className="one" onClick={this.loginToggle}>{buttonTitle}</button>
                 <button className="two" type="submit">{buttonTitle2}</button>

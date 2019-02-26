@@ -147,6 +147,7 @@ class User extends Component {
             updatedPressed: false}))
     }
     updateWorkout = (event, workout) => {
+        
         event.preventDefault();
         fetch(`${APIURL}/log/update/${workout.id}`, {
             method: "PUT",
@@ -183,7 +184,7 @@ class User extends Component {
                     </Col>
                 </Row>
             </Container>
-            {this.state.clickUpdate ? <UpdateModal incomingModal={this.incomingModal} close={this.closeModal} exercises={this.state.exercises} updateWorkout={this.updateWorkout} selectedWorkout={this.state.selectedWorkout} handleChange={this.handleChange}/> : null}
+            {this.state.clickUpdate ? <UpdateModal incomingModal={this.incomingModal} close={this.closeModal} exercises={this.state.exercises} updateWorkout={this.updateWorkout} selectedWorkout={this.state.selectedWorkout} time={this.state.time} comments={this.state.comments} handleChange={this.handleChange}/> : null}
             {this.state.updatedPressed ? 
             <Modal isOpen={true}>
             <Container>
@@ -192,7 +193,7 @@ class User extends Component {
                         <Form onSubmit={this.handleSubmit} >
                         <Row>
                             <Col md="8">
-                                <Label for="number" className="modalFormText">How many exercises would you like to do?</Label>
+                                <Label for="number" className="modalFormTexts">How many exercises would you like to do?</Label>
                             </Col>
                             <Col md="3">
                                 <Input type="select" name="numberOfExercises" id="number" onChange={this.handleChange} placeholder="number">

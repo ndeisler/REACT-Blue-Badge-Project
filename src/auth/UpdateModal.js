@@ -3,7 +3,7 @@ import  {Button, Form, FormGroup, Label, Input, Container, Row, Col, Modal, Moda
 
 
 const UpdateModal = (props) => {
-
+    
     let exercises = props.exercises;
     let workout = props.selectedWorkout; 
     let array = [];
@@ -33,7 +33,7 @@ const UpdateModal = (props) => {
                                     <Col md="4">
                                         <img src={el.image_url}/>
                                     </Col>
-                                    <Col md="8">
+                                    <Col className="descriptionBox" md="8">
                                         <h4>{el.name}</h4>
                                         <p>{el.description}</p>
                                     </Col>
@@ -49,13 +49,13 @@ const UpdateModal = (props) => {
                             <Row>
                                 <Col>
                                 <Label for="time">How long did this workout take you?</Label>
-                                <Input type="number" id="time" onChange={event => props.handleChange(event)} name="time" placeholder="time" />
+                                <Input type="number" id="time" onChange={event => props.handleChange(event)} name="time" defaultValue={workout.time}/>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
                                     <Label for="comments">Thoughts on the workout:</Label> 
-                                    <Input type="text" id="comments" onChange={event => props.handleChange(event)} name="comments" placeholder="comments"/>
+                                    <Input type="text" id="comments" onChange={event => props.handleChange(event)} name="comments" defaultValue={workout.comments}/>
                                 </Col>
                             </Row>
                             <div className="modalButton">

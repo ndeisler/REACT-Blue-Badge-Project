@@ -211,6 +211,8 @@ div Button {
   }
 } */
 
+
+
 @media screen and (max-width: 500px) {
   .generatedWorkouts .descriptionBox {
     margin-top: 2em;
@@ -229,8 +231,9 @@ div Button {
     margin: auto;
     margin-bottom: 1em; 
   }
-  
-  
+}
+.lol {
+  margin-bottom: 40px;
 }
 
 #clearDiv p {
