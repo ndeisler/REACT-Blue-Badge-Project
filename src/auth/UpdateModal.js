@@ -21,8 +21,7 @@ const UpdateModal = (props) => {
             <Modal isOpen={true}>
                 <Container>
                     <ModalHeader toggle={props.close} close={closeBtn}>Update Your Workout</ModalHeader>
-                    <br/>
-                        
+                    <br/>   
                     <div className="yourWorkouts">
                     <Container>
                         {
@@ -64,13 +63,10 @@ const UpdateModal = (props) => {
                             
                         </Form>
                 </Container>
-                {/* <Button onClick={props.close} color="danger" id={workout.id}>Close</Button> */}
             </Modal>
-        
         </div>
     )
 }
-
 export default UpdateModal;
 
 

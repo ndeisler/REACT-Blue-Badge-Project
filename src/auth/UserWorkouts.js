@@ -19,14 +19,12 @@ const UserWorkouts = (props) => {
 
         <div className="lol">
             {props.userWorkouts.map((workout, index) => {
-                
                 return (
                     <Container fluid className="cardContainer" key={index}>
                         <Row>
                             <Col sm="12" md="4" lg="4">
                                 <Carousel showThumbs={false} infiniteLoop={true} className="carousel">
-                                    {
-                                        
+                                    { 
                                         workout.workouts.map((el, index) => {
                                             return (
                                                 <div key={index} >

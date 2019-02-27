@@ -24,7 +24,6 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
   color: #61dafb;
 }
@@ -38,15 +37,13 @@
   }
 }
 
-
-
-
 /*Auth Styling*/
 
 .kettle {
   height: 30px;
   width: 30px;
 }
+
 .randomWorkout {
   color: rgb(177, 77, 77);
 }
@@ -65,6 +62,7 @@ span{
   margin-left: 20px;
 }
 
+/* LOG IN AND SIGN UP */
 .login {
   top: 50%;
   left: 50%;
@@ -153,11 +151,7 @@ span{
 
   width: 140px;
   box-shadow: 1px 1px grey;
-  /* background-color: rgb(203, 203, 203); */
-
-  /* display: inline; */
 }
-
 
 .login label {
   font-weight: bold;
@@ -169,10 +163,9 @@ span{
 
 div Button {
   border-radius: 5px;
-  /* margin-top: 40px; */
 }
 
-/*STYLING FOR MODAL*/
+/*STYLING FOR MODAL RANDOM WORKOUTS*/
 #img {
   width: 100px;
   height: 100px;
@@ -193,14 +186,6 @@ div Button {
   height: 100px;
   border-radius: .3em;
 }
-
-/* @media screen and (max-width: 500px) {
-  .generatedWorkouts {
-    height: 50px;
-  }
-} */
-
-
 
 @media screen and (max-width: 500px) {
   .generatedWorkouts .descriptionBox {
@@ -248,10 +233,10 @@ div Button {
   margin-bottom: 1.2em;
 }
 .modalGenerateButton Button {
-  width: 100%;
-   
-
+  width: 100%;  
 }
+
+/* NAV BAR */
 
 .navbar {
   box-shadow: 2px black;
@@ -266,15 +251,15 @@ div Button {
   width: 100%;
   float: right;
 }
+
 .deleteButton {
-  
   height: 2.5em;
   color: grey !important;
   background-color: transparent !important;
   border-style: none !important;
 }
+
 .editButton {
-  
   height: 2.5em;
   color: grey !important;
   background-color: transparent !important;
@@ -301,21 +286,20 @@ div Button {
 .cardContainer img {
   border-radius: 5px;
 }
-/* .cardButtons Button {
-  position: relative;
-  top: 2em;
-  margin: .5em;
-} */
+
 .cardContainer .editButton {
   float: left;
 }
+
 .cardContainer .deleteButton {
   float: right;
 }
+
 .time {
   text-align: left;
   margin: 20px;
 }
+
 .comment {
   margin: 20px;
   text-align: left;
@@ -325,6 +309,7 @@ div Button {
   margin: auto !important;
   width: 100% !important;
 }
+
 .carousel img {
   width: 150px;
   height: 200px;
@@ -344,9 +329,9 @@ div Button {
   width: 100%;
   margin: 1.2em;
 }
+
 .modalButton Button {
-  width: 90%;
-  
+  width: 90%; 
 }
 
 .yourWorkouts {
@@ -362,9 +347,11 @@ div Button {
   height: 100px;
   border-radius: .3em;
 }
+
 .yourWorkouts p {
   font-size: 0.8em;
 }
+
 .modalForm {
   position: relative;
   top: 80px;

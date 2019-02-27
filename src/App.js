@@ -12,21 +12,19 @@ class App extends Component {
       sessionToken: undefined
     }
   }
-
   viewConductor = () => {
                                                       //<User/>
     return this.state.sessionToken !== undefined ? <User token={this.state.sessionToken}/> : <Auth tokenHandler={this.storeSessionToken}/>
   }
   removeSessionToken = () => {
     this.setState({
-      sessionToken: undefined});
-    // localStorage.clear();
+      sessionToken: undefined
+    });
+    localStorage.clear();
   }
   storeSessionToken = (token) => {
-    this.setState( {sessionToken: token})
+    this.setState( {sessionToken: token} )
   }
-  
-
   render() {
     return (
       <div className="App">
@@ -37,5 +35,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;

@@ -16,10 +16,7 @@ class Auth extends React.Component {
             needPassword: false
         }
     }
-// DO A COMPONENT WILL MOUNT THAT DISPLAY ALL THE RANDOM WORKOUTS SAVED
-
     handleChange = (event) => {
-        
         this.setState({
             [event.target.id] : event.target.value
         });  
@@ -47,9 +44,7 @@ class Auth extends React.Component {
             } else {
                 return res.json()
                 .then(json => this.props.tokenHandler(json.sessionToken))
-            }})
-        
-        
+            }}) 
     }
     loginToggle = (event) => {
         event.preventDefault();
@@ -69,15 +64,12 @@ class Auth extends React.Component {
         let title = this.state.login ? "Login" : "Sign-up";
         let signUpFields = this.state.login ? null : (
             <React.Fragment>
-
-
                 <label htmlFor="firstName">First Name:</label><br/>
                 <input  onChange={this.handleChange} value={this.state.firstName}type="text" id="firstName" placeholder="first name"/><br/>
                 <label htmlFor="lastName">Last Name:</label><br/>
                 <input onChange={this.handleChange} value={this.state.lastName}type="text" id="lastName" placeholder="last name"/><br/> 
             </React.Fragment>
         )
-    
         return (
             <div className={this.state.login ? "login" : "signup"}>
             <form className="cardLike" onSubmit={this.handleSubmit}>
@@ -93,8 +85,7 @@ class Auth extends React.Component {
                     <button className="two" type="submit">{buttonTitle2}</button>
                 </div>
             </form>
-            </div>
-            
+            </div>  
         )
     }
 }

@@ -23,7 +23,6 @@ class User extends Component {
             updatedPressed: true,
             clickUpdate: false,
             hasGenerated: false,
-            
             numberOfExercises: "",
             time: "",
             comments: ""
@@ -80,7 +79,6 @@ class User extends Component {
             [event.target.name]: event.target.value
         })
     }
-    
     generateWorkout = (event) => {
         let input = document.getElementById("number").value;
         if (input === "") {
@@ -100,9 +98,7 @@ class User extends Component {
                         arr.push(newNumber);
                     }
                     randomWorkoutGenerator(arr);
-                }
-                // console.log(arr);
-                
+                }   
             }
             randomWorkoutGenerator(array);
             for (let i = 0; i < array.length; i++) {
@@ -111,8 +107,7 @@ class User extends Component {
                 workout.push(exercises[index]);
             }
             this.setState({
-                generatedWorkout: workout,
-                
+                generatedWorkout: workout,  
             }) 
         })
     }
@@ -175,7 +170,7 @@ class User extends Component {
     }
     render() {
         const closeBtn = <button className="close" onClick={this.setUpdatedWorkout}>&times;</button>
-
+        
         return (
             <div className="modalForm">
             <Container fluid className="formContainer">
@@ -193,52 +188,43 @@ class User extends Component {
             {this.state.clickUpdate ? <UpdateModal incomingModal={this.incomingModal} close={this.closeModal} exercises={this.state.exercises} updateWorkout={this.updateWorkout} selectedWorkout={this.state.selectedWorkout} time={this.state.time} comments={this.state.comments} handleChange={this.handleChange}/> : null}
             {this.state.updatedPressed ? 
             <Modal isOpen={true}>
-            <Container>
-                <ModalHeader toggle={this.setUpdatedWorkout} close={closeBtn}>Random Workout</ModalHeader>
-                <br/>
-                        <Form onSubmit={this.handleSubmit} >
-                        <Row>
-                            <Col md="8">
-                                <Label for="number" className="modalFormTexts">How many exercises would you like to do?</Label>
-                            </Col>
-                            <Col md="3">
-                                <Input type="select" name="numberOfExercises" id="number" onChange={this.handleChange} placeholder="number">
-                                    <option></option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                </Input>
-                            </Col>
-                        </Row>
-                        <br/>
-                        {this.state.generatedWorkout.length > 0 ? <Randomizer generatedWorkouts={this.state.generatedWorkout}/>: null}
-                        <br />  
-                        <Row>
-                        {this.state.generatedWorkout.length > 0 ? <div className="buttons">
-                            <Button onClick={this.generateWorkout}>Generate Again</Button>
-                            <Button type="submit" color="warning">Save Workout</Button>
-                        </div> : <div className="modalGenerateButton"><Button onClick={this.generateWorkout}>Generate</Button></div>}
-
-                        {/* <div className="buttons">
-                            <Button onClick={this.generateWorkout}>Generate</Button>
-                            <Button type="submit" color="warning">Save Workout</Button>
-                        </div> */}
-                        </Row>
-                    </Form>
-            </Container>
-            {/* <Button onClick={this.setUpdatedWorkout} color="danger">Close</Button> */}
+                <Container>
+                    <ModalHeader toggle={this.setUpdatedWorkout} close={closeBtn}>Random Workout</ModalHeader>
+                    <br/>
+                            <Form onSubmit={this.handleSubmit} >
+                            <Row>
+                                <Col md="8">
+                                    <Label for="number" className="modalFormTexts">How many exercises would you like to do?</Label>
+                                </Col>
+                                <Col md="3">
+                                    <Input type="select" name="numberOfExercises" id="number" onChange={this.handleChange} placeholder="number">
+                                        <option></option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                    </Input>
+                                </Col>
+                            </Row>
+                            <br/>
+                            {this.state.generatedWorkout.length > 0 ? <Randomizer generatedWorkouts={this.state.generatedWorkout}/>: null}
+                            <br />  
+                            <Row>
+                            {this.state.generatedWorkout.length > 0 ? <div className="buttons">
+                                <Button onClick={this.generateWorkout}>Generate Again</Button>
+                                <Button type="submit" color="warning">Save Workout</Button>
+                            </div> : <div className="modalGenerateButton"><Button onClick={this.generateWorkout}>Generate</Button></div>}
+                            </Row>
+                        </Form>
+                </Container>
             </Modal> : <div></div>}
             </div>
-            
-
         )
-
     }
 }
 export default User;

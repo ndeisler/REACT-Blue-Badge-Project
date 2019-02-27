@@ -12,8 +12,6 @@ import {
     Button
 } from "reactstrap";
 
-
-
 class SiteBar extends Component {
     constructor(props) {
         super(props);
@@ -26,7 +24,6 @@ class SiteBar extends Component {
             isOpen: !this.state.isOpen
         })
     }
-
     render() {
         return (
             <div>
@@ -36,10 +33,7 @@ class SiteBar extends Component {
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            
-                            {/* <Button onClick={this.setUpdatedWorkout}>Generate a New Workout</Button> */}
-                            <Button className={this.props.token !== undefined ? "buttonDisplay" : "buttonHidden"} onClick={() => this.props.removeToken()}>Logout</Button>
-                            
+                            <Button className={this.props.token !== undefined ? "buttonDisplay" : "buttonHidden"} onClick={() => this.props.removeToken()}>Logout</Button> 
                         </NavItem>
                     </Nav>
                 </Collapse>
@@ -48,5 +42,4 @@ class SiteBar extends Component {
         );
     }
 }
-
 export default SiteBar;
